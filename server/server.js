@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 
-// Grabs dotenv file
+// Grabs dotenv file for local server
 // require("dotenv").config({ path: "./config.env" });
 require("dotenv").config();
 
@@ -13,14 +13,16 @@ app.use(express.json());
 // app.use(require("./routes/record"));
 
 // get driver connection 
-var mysql      = require('mysql');
+var mysql = require('mysql');
+
+
+// development login for local DB -- Port to Heroku via JawsDB later
+// get local connection details from .env file
 var connection = mysql.createConnection({
-  host     : process.env.host,
-  user     : process.env.user,
-  password : process.env.password
+    host: process.env.host,
+    user: process.env.user,
+    password: process.env.password
 });
-
-
 
 app.listen(port, () => {
   // perform a database connection when server starts
