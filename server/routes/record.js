@@ -9,4 +9,9 @@ router.get('/another/route', function(req, res, next) {
   res.json({ hello: 'world' });
 });
 
+app.get("/api", (req, res) => {
+    res.json({ message: "Hello from server!" });
+    console.log("PING!");
+  });
+
 module.exports = router;

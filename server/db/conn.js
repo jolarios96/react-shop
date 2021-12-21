@@ -1,5 +1,6 @@
 var mysql = require('mysql');
-require("dotenv").config({ path: "./config.env" });
+require("dotenv").config({ path: "./.env" });
+// require("dotenv").config();
 
 console.log(process.env.HOST);
 
